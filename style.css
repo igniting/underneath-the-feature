@@ -183,13 +183,10 @@ body {
 /* ─── Hero ──────────────────────────────────────────────────── */
 
 .hero {
-  background: #111;
-  color: #ccc;
-  padding: 80px 48px 64px;
-}
-
-[data-theme="dark"] .hero {
-  background: #0c0b09;
+  background: var(--bg);
+  padding: 6rem 1.5rem 3rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-inner {
@@ -197,83 +194,20 @@ body {
   margin: 0 auto;
 }
 
-.hero-eyebrow {
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #555;
-  margin-bottom: 20px;
-}
-
 .hero h1 {
   font-size: 2.4rem;
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  color: #e8e4dc;
+  color: var(--heading);
   margin-bottom: 12px;
 }
 
 .hero-subtitle {
   font-style: italic;
   font-size: 1.05rem;
-  color: #666;
-  margin-bottom: 32px;
+  color: var(--text-secondary);
   line-height: 1.6;
-}
-
-.hero-meta {
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  color: #444;
-  display: flex;
-  gap: 20px;
-}
-
-.hero-toc {
-  margin-top: 36px;
-  padding-top: 28px;
-  border-top: 1px solid #222;
-}
-
-.hero-toc-label {
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #444;
-  margin-bottom: 12px;
-}
-
-.hero-toc ol {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px 28px;
-}
-
-.hero-toc ol li {
-  font-size: 0.78rem;
-  color: #555;
-}
-
-.hero-toc ol li a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.hero-toc ol li a:hover {
-  color: #999;
-}
-
-.hero-toc ol li .toc-num {
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #444;
-  margin-right: 5px;
 }
 
 /* ─── Story content ─────────────────────────────────────────── */
@@ -310,14 +244,6 @@ body {
   text-align: center;
 }
 
-.chapter-subtitle {
-  font-style: italic;
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  text-align: center;
-  margin-bottom: 3rem;
-  line-height: 1.6;
-}
 
 .chapter p {
   margin-bottom: 1.25rem;
@@ -363,15 +289,11 @@ body {
   }
 
   .hero {
-    padding: 60px 28px 52px;
+    padding: 4rem 1.25rem 2.5rem;
   }
 
   .story-content {
     padding: 4rem 1.25rem 6rem;
-  }
-
-  .hero-toc ol {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -381,7 +303,7 @@ body {
   }
 
   .hero {
-    padding: 48px 20px 44px;
+    padding: 3rem 1.25rem 2rem;
   }
 
   .hero h1 {
