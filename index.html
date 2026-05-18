@@ -15,20 +15,6 @@
   <div id="progress-bar" role="progressbar" aria-label="Reading progress"></div>
 
   <button id="theme-toggle" aria-label="Toggle dark mode">◑</button>
-  <button id="nav-toggle" aria-label="Open chapter navigation">☰</button>
-
-  <nav id="sidebar" aria-label="Chapter navigation">
-    <p class="sidebar-label">Chapters</p>
-    <ul class="chapter-nav">
-      <li><a href="#chapter-1"><span class="num">I</span>The Small Thing</a></li>
-      <li><a href="#chapter-2"><span class="num">II</span>The Easy Argument</a></li>
-      <li><a href="#chapter-3"><span class="num">III</span>The Long No</a></li>
-      <li><a href="#chapter-4"><span class="num">IV</span>The Same Human</a></li>
-      <li><a href="#chapter-5"><span class="num">V</span>The Honest Answer</a></li>
-      <li><a href="#chapter-6"><span class="num">VI</span>The Memo</a></li>
-      <li><a href="#chapter-7"><span class="num">VII</span>The Long Year</a></li>
-    </ul>
-  </nav>
 
   <div id="main">
 
@@ -936,42 +922,6 @@
     }
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
-
-    // ── Active chapter highlight ──────────────────────────
-    const chapters = document.querySelectorAll('.chapter');
-    const navLinks = document.querySelectorAll('.chapter-nav a');
-
-    function setActive(id) {
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-      });
-    }
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    }, { rootMargin: '-15% 0px -75% 0px' });
-
-    chapters.forEach(ch => observer.observe(ch));
-
-    // ── Mobile nav toggle ─────────────────────────────────
-    const sidebar = document.getElementById('sidebar');
-    const navToggle = document.getElementById('nav-toggle');
-
-    navToggle.addEventListener('click', () => {
-      const open = sidebar.classList.toggle('open');
-      navToggle.textContent = open ? '✕' : '☰';
-      navToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open chapter navigation');
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        navToggle.textContent = '☰';
-        navToggle.setAttribute('aria-label', 'Open chapter navigation');
-      });
-    });
 
     // ── Dark / light mode ─────────────────────────────────
     const toggle = document.getElementById('theme-toggle');
