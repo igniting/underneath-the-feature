@@ -159,12 +159,21 @@ body {
 /* ─── Section separators ────────────────────────────────────── */
 
 .separator {
-  text-align: center;
-  margin: 3rem 0;
-  color: var(--separator);
-  letter-spacing: 0.5em;
-  font-size: 0.8rem;
+  position: relative;
+  height: 1px;
+  font-size: 0;
+  line-height: 0;
+  margin: 2.5rem 0;
   user-select: none;
+}
+
+.separator::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--separator);
+  margin: 0 auto;
 }
 
 /* ─── Responsive ────────────────────────────────────────────── */
